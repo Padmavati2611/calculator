@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A modern responsive standard and scientific calculator built with plain HTML, CSS and JavaScript." />
+  <title>Modern Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="calculator" id="calculator" aria-label="Calculator">
+      <div class="mode-switch" role="tablist" aria-label="Calculator mode">
+        <button type="button" class="mode-switch__btn is-active" data-mode="standard" role="tab" aria-selected="true">Standard</button>
+        <button type="button" class="mode-switch__btn" data-mode="scientific" role="tab" aria-selected="false">Scientific</button>
+      </div>
+
+      <div class="display">
+        <div class="display__expression" id="expression-display" aria-live="polite"></div>
+        <div class="display__current" id="current-display" role="status" aria-live="polite">0</div>
+      </div>
+
+      <!-- Scientific functions (shown only in scientific mode) -->
+      <div class="sci-panel">
+        <div class="sci-panel__bar">
+          <button type="button" class="chip" id="angle-toggle" aria-label="Toggle angle unit">DEG</button>
+        </div>
+
+        <div class="keys keys--sci">
+          <button type="button" class="btn btn--sci" data-action="lparen" aria-label="Open parenthesis">(</button>
+          <button type="button" class="btn btn--sci" data-action="rparen" aria-label="Close parenthesis">)</button>
+          <button type="button" class="btn btn--sci" data-function="&radic;" aria-label="Square root">&radic;</button>
+          <button type="button" class="btn btn--sci" data-postfix="&sup2;" aria-label="Square">x&sup2;</button>
+          <button type="button" class="btn btn--sci" data-operator="^" aria-label="Power">x&#8319;</button>
+
+          <button type="button" class="btn btn--sci" data-function="sin" aria-label="Sine">sin</button>
+          <button type="button" class="btn btn--sci" data-function="cos" aria-label="Cosine">cos</button>
+          <button type="button" class="btn btn--sci" data-function="tan" aria-label="Tangent">tan</button>
+          <button type="button" class="btn btn--sci" data-function="log" aria-label="Logarithm base 10">log</button>
+          <button type="button" class="btn btn--sci" data-function="ln" aria-label="Natural logarithm">ln</button>
+
+          <button type="button" class="btn btn--sci" data-constant="&pi;" aria-label="Pi">&pi;</button>
+          <button type="button" class="btn btn--sci" data-constant="e" aria-label="Euler's number">e</button>
+          <button type="button" class="btn btn--sci" data-postfix="!" aria-label="Factorial">x!</button>
+          <button type="button" class="btn btn--sci" data-postfix="%" aria-label="Percent">%</button>
+          <button type="button" class="btn btn--sci" data-postfix="&#8315;&#185;" aria-label="Reciprocal">1/x</button>
+        </div>
+      </div>
+
+      <!-- Core keypad (always visible) -->
+      <div class="keys keys--std">
+        <button type="button" class="btn btn--fn btn--wide" data-action="clear">AC</button>
+        <button type="button" class="btn btn--fn" data-action="delete" aria-label="Delete last digit">⌫</button>
+        <button type="button" class="btn btn--op" data-operator="&divide;" aria-label="Divide">&divide;</button>
+
+        <button type="button" class="btn" data-number="7">7</button>
+        <button type="button" class="btn" data-number="8">8</button>
+        <button type="button" class="btn" data-number="9">9</button>
+        <button type="button" class="btn btn--op" data-operator="&times;" aria-label="Multiply">&times;</button>
+
+        <button type="button" class="btn" data-number="4">4</button>
+        <button type="button" class="btn" data-number="5">5</button>
+        <button type="button" class="btn" data-number="6">6</button>
+        <button type="button" class="btn btn--op" data-operator="-" aria-label="Subtract">&minus;</button>
+
+        <button type="button" class="btn" data-number="1">1</button>
+        <button type="button" class="btn" data-number="2">2</button>
+        <button type="button" class="btn" data-number="3">3</button>
+        <button type="button" class="btn btn--op" data-operator="+" aria-label="Add">+</button>
+
+        <button type="button" class="btn btn--wide" data-number="0">0</button>
+        <button type="button" class="btn" data-action="decimal" aria-label="Decimal point">.</button>
+        <button type="button" class="btn btn--eq" data-action="equals" aria-label="Equals">=</button>
+      </div>
+    </section>
+
+    <p class="hint">
+      Keyboard supported &mdash; <kbd>Enter</kbd> equals, <kbd>Backspace</kbd> delete, <kbd>Esc</kbd> clear,
+      <kbd>(</kbd> <kbd>)</kbd> groups, <kbd>^</kbd> power.
+    </p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
