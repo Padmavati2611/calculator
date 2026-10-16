@@ -44,7 +44,7 @@ calculator/
 4. Start calculating!
 
 ## 🌐 Live Demo
-
+https://padmavati2611.github.io/calculator/
 
 *Enable GitHub Pages in the repository settings to make the live demo available.*
 
